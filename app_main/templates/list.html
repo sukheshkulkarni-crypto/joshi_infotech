@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="get" class="mb-3">
+<input name="q" class="form-control" placeholder="Search">
+</form>
+<a href="/create/" class="btn btn-primary mb-2">Add</a>
+{% for e in employees %}
+<div>{{e.name}} - {{e.price}}
+<a href="/update/{{e.id}}/">Edit</a>
+<a href="/delete/{{e.id}}/">Delete</a>
+</div>
+{% endfor %}
+{% endblock %}
